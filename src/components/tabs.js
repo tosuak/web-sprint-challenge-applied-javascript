@@ -17,7 +17,8 @@ const Tabs = (topics) => {
   //
 
   const classTopics = document.createElement('div');
-
+  classTopics.classList.add('topics');
+  
   topics.forEach(topicList => {
     const elem = document.createElement('div');
     elem.classList.add('tab');
@@ -41,6 +42,7 @@ const tabsAppender = (selector) => {
   .then(resp => {
     console.log(resp);
     document.querySelector(selector).appendChild(Tabs(resp.data.topics));
+    
     })
   .catch(error => {
     console.log(error);
